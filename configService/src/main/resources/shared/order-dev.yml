@@ -1,0 +1,19 @@
+server:
+  port: 8082 #order服务访问端口
+spring:
+  application:
+    name: order #应用名称
+  datasource:
+    driver-class-name : com.mysql.cj.jdbc.Driver 
+    url: jdbc:mysql://localhost:3306/oss_db?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true   
+    username: root
+    password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+mybatis:
+  mapper-locations: classpath:/mapping/*.xml #xml配置文件
+  type-aliases-package: com.cctv.entity #实体类包名，用于xml文件包名省略
